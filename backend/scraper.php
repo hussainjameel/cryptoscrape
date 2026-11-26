@@ -394,8 +394,6 @@ function mapCoin(array $coin): array
 
 try {
 
-    echo "Fetching CoinMarketCap data...\n";
-
     // Fetch first page from homepage HTML
     $firstPage = extractHomepageListing(
         fetchPage($homepageUrl)
@@ -406,9 +404,6 @@ try {
     $totalAvailable = $firstPage['total_count'];
 
     $pageErrors = [];
-
-    echo "Page 1 retrieved successfully: "
-        . count($records) . " records\n";
 
 
     // -------------------------------------
@@ -528,7 +523,7 @@ try {
     ];
 
 
-    echo "\nJSON OUTPUT:\n";
+    // echo "\nJSON OUTPUT:\n";
 
     echo json_encode(
         $response,
